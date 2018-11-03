@@ -9,13 +9,13 @@ import reactor.core.publisher.Flux;
 @SpringBootApplication
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
-	@Bean
+    @Bean
     public CommandLineRunner demo() {
-	    return args -> {
+        return args -> {
             Flux<String> s = Flux.fromArray(new String[]{"1", "2", "3", "4"});
 
             s.map(Integer::parseInt)
